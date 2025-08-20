@@ -3,7 +3,7 @@ import { currencyFormatter } from "../util/formatting";
 import Button from "./UI/Button";
 import CartContext from "../context/CartContext";
 
-function MealItem({ meals }) {
+function MealItem({ meal }) {
   const cartCtx = useContext(CartContext)
 
   function handleAddMealToCart(meal) {
@@ -12,7 +12,7 @@ function MealItem({ meals }) {
 
   return (
     <div id="meals">
-      {meals.map((meal) => (
+      
         <article key={meal.id} className="meal-item">
           <img src={`http://localhost:3000/${meal.image}`} alt="" />
           <div>
@@ -24,7 +24,7 @@ function MealItem({ meals }) {
             <Button onClick={() => handleAddMealToCart(meal)}>Add to Cart</Button>
           </p>
         </article>
-      ))}
+
     </div>
   );
 }
